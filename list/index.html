@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/home.css">
     <link rel="stylesheet" href="../styles/list.css">
-    <title>Document</title>
+    <title>List</title>
 </head>
 
 <body>
@@ -23,6 +23,19 @@
     <button id="logout">Logout</button>
     <main>
         <h1>You are logged in!</h1>
+        <p id="error"></p>
+        <form class="item-form">
+            <label>Quantity: 
+                <input type="number" name="qty" min="0" />
+            </label>
+            <label>Item: 
+                <input type="text" name="item" />
+            </label>
+            <button id="add-button">Add item</button>
+        </form>
+        <li id="item-list">
+
+        </li>
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
