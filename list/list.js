@@ -24,7 +24,7 @@ form.addEventListener('submit', async (e) => {
 });
 
 async function displayListItems() {
-    list.textcontent = ' ';
+    list.textContent = ' ';
     const data = await fetchItems();
     if (data) {
         for (let name of data) {
