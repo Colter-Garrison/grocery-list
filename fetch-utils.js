@@ -38,7 +38,7 @@ export async function logout() {
 }
 
 export async function createListItem(name, qty) {
-    const response = await client.from('grocery-list').insert({ name, qty });
+    const response = await client.from('grocery_list').insert({ name, qty });
 
     if (response.error) {
         console.error(response.error.message);

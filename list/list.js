@@ -10,11 +10,13 @@ logoutButton.addEventListener('click', () => {
     logout();
 });
 
-// form.addEventListener('submit', async (e) => {
-//     e.preventDefault();
-//     const itemData = new FormData(form);
-//     const data = await createListItem(itemData.get('name'), itemData.get('qty'));
-//     id (data) {
-
-//     }
-// });
+form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const itemData = new FormData(form);
+    const data = await createListItem(itemData.get('name'), itemData.get('qty'));
+    if (data) {
+        window.location.href = '/list';
+    } else {
+        error.textContent = 'something went wrong :(';
+    }
+});
