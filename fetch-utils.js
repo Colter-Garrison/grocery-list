@@ -37,8 +37,31 @@ export async function logout() {
     return (window.location.href = '../');
 }
 
-export async function createListItem(name, qty) {
+export async function createItem(name, qty) {
     const response = await client.from('grocery_list').insert({ name, qty });
+
+    if (response.error) {
+        console.error(response.error.message);
+    } else {
+        return response.data;
+    }
+}
+
+export async function fetchItems() {
+    const response = await client.from('grocery_list').select('*').order('created_at');
+
+    if (response.error) {
+        console.error(response.error.message);
+    } else {
+        return response.data;
+    }
+}
+
+export async function buyItem(name) {
+    const response = await client
+        .from('grocery_list')
+        .update({ bought: !name.bought })
+        .match({ id: name.id });
 
     if (response.error) {
         console.error(response.error.message);
