@@ -1,5 +1,5 @@
-import { checkAuth, logout, createItem, fetchItems, buyItem } from '../fetch-utils.js';
-import { renderItems } from '../render-utils.js';
+import { checkAuth, logout, createItem, fetchItems, buyItem, deleteAllItems } from '../fetch-utils.js';
+import { renderItem } from '../render-utils.js';
 
 checkAuth();
 
@@ -7,6 +7,7 @@ const logoutButton = document.getElementById('logout');
 const form = document.querySelector('.item-form');
 const error = document.getElementById('error');
 const list = document.getElementById('item-list');
+const deleteButton = document.getElementById('delete-button');
 
 logoutButton.addEventListener('click', () => {
     logout();
@@ -28,7 +29,7 @@ async function displayListItems() {
     const data = await fetchItems();
     if (data) {
         for (let name of data) {
-            const listElem = renderItems(name);
+            const listElem = renderItem(name);
             listElem.addEventListener('click', async (e) => {
                 e.preventDefault();
                 await buyItem(name);
@@ -40,5 +41,10 @@ async function displayListItems() {
         error.textContent = 'something went wrong :(';
     }
 }
+
+deleteButton.addEventListener('click', async () => {
+    await deleteAllItems();
+    displayListItems();
+});
 
 displayListItems();

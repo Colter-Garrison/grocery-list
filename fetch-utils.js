@@ -70,6 +70,11 @@ export async function buyItem(name) {
     }
 }
 
+export async function deleteAllItems() {
+    const response = await client.from('grocery_list').delete().match({ user_id: getUser().id });
+    return response.data;
+}
+
 // function checkError({ data, error }) {
 //     return error ? console.error(error) : data;
 // }
