@@ -19,7 +19,7 @@ body {
     --footer-height: 25px;
     
     font-family: 'Titillium Web', sans-serif;
-    background-color: var(--color2);
+    background: radial-gradient(circle, rgba(255, 134, 21, .75) 20%, rgba(0, 238, 255, 1) 50%, rgba(0, 238, 255, .2) 15%);
 }
 
 main {
