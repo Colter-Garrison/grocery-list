@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/home.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../styles/list.css">
+    <title>List</title>
 </head>
 
 <body>
@@ -22,11 +23,26 @@
     <button id="logout">Logout</button>
     <main>
         <h1>You are logged in!</h1>
+        <p id="error"></p>
+        <form class="item-form">
+            <label>Quantity: 
+                <input type="number" name="qty" min="0" />
+            </label>
+            <label>Item: 
+                <input type="text" name="name" />
+            </label>
+            <button id="add-button">Add item</button>
+        </form>
+        <h1>Shopping List</h1>
+        <ul id="item-list">
+
+        </ul>
+        <button id="delete-button">Delete All Items</button>
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
     </footer>
-    <script type="module" src="./other-page.js"></script>
+    <script type="module" src="./list.js"></script>
 </body>
 
 </html>
