@@ -1,0 +1,7 @@
+.complete {
+    text-decoration: line-through black;
+}
+
+body {
+    background: linear-gradient(180deg, rgb(124, 169, 0), rgba(124, 169, 0, 0.1));
+}
